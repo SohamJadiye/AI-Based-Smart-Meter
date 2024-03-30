@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  {% if title %}
+  <title>{{ title }} - ARMS</title>
+  {% else %}
+  <title>Welcome to ARMS</title>
+  {% endif %}
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script
+    type="text/javascript"
+    src="http://code.jquery.com/jquery-1.7.1.min.js"
+  ></script>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"
+    integrity="sha256-8zyeSXm+yTvzUN1VgAOinFgaVFEFTyYzWShOy9w7WoQ="
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif;
+    }
+  </style>
+  <body class="w3-light-grey">
+    
+    
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 300px; margin-top: 43px">
+      <!-- Header -->
+      <header class="w3-container" style="padding-top: 22px">
+        <h5>
+          <b><i class="fa fa-dashboard"></i> My Dashboard</b>
+        </h5>
+      </header>
+
+      <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-quarter">
+          <div
+            class="w3-container w3-white w3-hover-shadow w3-border-red w3-bottombar w3-padding-16"
+          >
+            <div class="w3-left">
+              <img src="/static/images/temperature.svg" />
+            </div>
+            <div class="w3-right">
+              <h3 id="card-temp">52</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Temperature</h4>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div
+            class="w3-container w3-white w3-hover-shadow w3-border-blue w3-bottombar w3-padding-16"
+          >
+            <div class="w3-left"><img src="/static/images/grass.svg" /></div>
+            <div class="w3-right">
+              <h3 id="card-voltage">99</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Voltage</h4>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div
+            class="w3-container w3-white w3-hover-shadow w3-border-teal w3-bottombar w3-padding-16"
+          >
+            <div class="w3-left"><img src="/static/images/humidity.svg" /></div>
+            <div class="w3-right">
+              <h3 id="card-humidity">23</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Humidity</h4>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div
+            class="w3-container w3-white w3-hover-shadow w3-border-orange w3-bottombar w3-padding-16"
+          >
+            <div class="w3-left"><img src="/static/images/ecology.svg" /></div>
+            <div class="w3-right">
+              <h3 id="card-curr">50</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Current Intensity</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-panel w3-padding-large">
+        <div
+          class="w3-container w3-white w3-card w3-hover-shadow w3-section w3-round-large"
+        >
+          <h3>Temperature</h3>
+          <canvas id="temperature"></canvas>
+        </div>
+
+        <div
+          class="w3-container w3-white w3-card w3-hover-shadow w3-section w3-round-large"
+        >
+          <h3>Humidity</h3>
+          <canvas id="humidity"></canvas>
+        </div>
+
+        <div
+          class="w3-container w3-white w3-card w3-hover-shadow w3-section w3-round-large"
+        >
+          <h3>Voltage</h3>
+          <canvas id="voltage"></canvas>
+        </div>
+
+        <div
+          class="w3-container w3-white w3-card w3-hover-shadow w3-section w3-round-large"
+        >
+          <h3>Current Intensity</h3>
+          <canvas id="current"></canvas>
+        </div>
+      </div>
+
+      <div class="w3-panel w3-padding-16">
+        <div
+          class="w3-row-padding w3-white w3-border-green w3-margin-left w3-leftbar"
+          style="margin: 0 -16px"
+        >
+          <div class="w3-third w3-padding-16">
+            <h5>Field Description</h5>
+            <img src="/static/images/trees.svg" style="width: 100%" alt="" />
+          </div>
+          <div class="w3-twothird">
+            <h5>SunFlower Garden</h5>
+
+            <p>Something is going to be in here</p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="w3-container w3-dark-grey w3-padding-32">
+        <div class="w3-row">
+          <div class="w3-container w3-third">
+            <h5 class="w3-bottombar w3-border-green">Contributers</h5>
+            <h6>Aman Singh</h6>
+            <h6>Rica Ghosh</h6>
+            <h6>Deepak Yadu</h6>
+            <h6>Khyati banjare</h6>
+            <h6>Arwind</h6>
+          </div>
+          <div class="w3-container w3-third">
+            <h5 class="w3-bottombar w3-border-red">Guides</h5>
+            <h6>All faculties Of BIT Raipur</h6>
+          </div>
+          <div class="w3-container w3-third">
+            <h5 class="w3-bottombar w3-border-orange">References</h5>
+            <h6>Google.com</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <script src="/static/JS/chart_data.js"></script>
+    <script src="/static/JS/main.js"></script>
+   
+  </body>
+</html>

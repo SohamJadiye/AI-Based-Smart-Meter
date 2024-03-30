@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Page</title>
+	<link href=
+"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		rel="stylesheet">
+</head>
+
+<body class="flex items-center justify-center
+			min-h-screen bg-gray-200">
+	<div class="main bg-white rounded-lg shadow-md p-10 
+	transition-transform w-1/2 text-center">
+		<h1 class="text-black-600 text-3xl">
+			Smart Home
+		</h1>
+		<h3 class="text-lg">
+			Enter your login credentials
+		</h3>
+		<form action="/login" method ="post">
+			
+			
+			<label for="userid" class="block mt-4 mb-2 text-left
+			 text-gray-700 font-bold">User Id</label>
+			<input type="number" id="userid" name = "userid"
+				placeholder="Enter your Username"
+				class="block w-full mb-6 px-4 py-2 border border
+				-gray-300 rounded-md focus:outline-none
+				focus:border-green-400" required>
+			<label for="pno" class="block mt-4 mb-2 text-left
+			 text-gray-700 font-bold">Phone Number:</label>
+			<input type="text" id="username" name = "pno"
+				placeholder="Enter your Username"
+				class="block w-full mb-6 px-4 py-2 border border
+				-gray-300 rounded-md focus:outline-none
+				focus:border-green-400" required>
+			
+
+			<label for="password" class="block mt-4 mb-2 text-left
+			 text-gray-700 font-bold">Password:</label>
+			<input type="password" id="password" name="password"
+				placeholder="Enter your Password"
+				class="block w-full mb-6 px-4 py-2 border 
+				border-gray-300 rounded-md focus:outline-none
+				focus:border-green-400" required>
+
+			<div class="flex justify-center items-center">
+				<button type="submit"
+						class="bg-green-600 text-white py-3 px-6 rounded
+					-md cursor-pointer transition-colors 
+					duration-300 hover:bg-green-500">
+					Submit
+				</button>
+			</div>
+		</form>
+		<p class="mt-4">Not registered?
+			<a href="/new_account" class="text-blue-500 
+			hover:underline">Create an account</a>
+		</p>
+	</div>
+</body>
+
+</html>
